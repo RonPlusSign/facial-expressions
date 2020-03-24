@@ -93,6 +93,8 @@ document
 // ---- Carousel events ----
 
 $(".my-card").click(function() {
+  console.log("cliccato");
+
   // Remove all classes
   $(this).removeClass("prev active next");
 
@@ -109,9 +111,15 @@ $(".my-card").click(function() {
       .next()
       .children()[0] == undefined
   ) {
-    cards.forEach(element => {
-      if (element == getStringFromNode($(this)[0]))
-        $("#index-carousel td.next").innerHTML = element;
+    cards.forEach((element, index) => {
+      if (
+        element == getStringFromNode($(this)[0]) &&
+        cards[index + 1] != undefined
+      )
+        $("#index-carousel td.next").append(
+          new DOMParser().parseFromString(cards[index + 1], "text/html").body
+            .firstChild
+        );
     });
   } else
     $(this)
@@ -122,11 +130,21 @@ $(".my-card").click(function() {
 
   // Add prev element
   if (
-    $(this) // If the element has no next, add it from the cards array
+    $(this) // If the element has no prev, add it from the cards array
       .parent()
       .prev()
       .children()[0] == undefined
   ) {
+    cards.forEach((element, index) => {
+      if (
+        element == getStringFromNode($(this)[0]) &&
+        cards[index - 1] != undefined
+      )
+        $("#index-carousel td.prev").append(
+          new DOMParser().parseFromString(cards[index - 1], "text/html").body
+            .firstChild
+        );
+    });
   } else
     $(this)
       .parent()
@@ -135,7 +153,15 @@ $(".my-card").click(function() {
       .addClass("prev");
 
   // Add active class
-  $(this).addClass("active");
+  $("td.active .my-card").remove();
+  $("td.active").append($(this).addClass("active"));
+});
+
+$(".chevron-right-box").click(() => {
+  $(".next").click();
+});
+$(".chevron-left-box").click(() => {
+  $(".prev").click();
 });
 
 var getStringFromNode = (function() {

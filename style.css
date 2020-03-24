@@ -3,7 +3,7 @@ body {
   height: 100%;
 }
 
-/* ----------- Footer ----------- */
+/* ---------------------- Footer ---------------------- */
 
 .footer {
   position: fixed;
@@ -14,7 +14,7 @@ body {
   text-align: center;
 }
 
-/* ----------- Navbar ----------- */
+/* ---------------------- Navbar ---------------------- */
 
 li[class="nav-item active"] {
   backdrop-filter: brightness(115%);
@@ -35,7 +35,7 @@ div.border-right {
   }
 }
 
-/* ----------- Carousel ----------- */
+/* ---------------------- Carousel ---------------------- */
 .card-carousel {
   overflow: visible;
 
@@ -44,58 +44,7 @@ div.border-right {
   margin: 10px;
 }
 
-.chevron-left-box, .chevron-right-box{
-  position: absolute;
-  top: 30px;
-
-  width: 60%;
-  height: 85%;
-
-  padding-top: 45%;
-  text-align: center;
-
-  transition: .2s;
-}
-
-
-.chevron-left-box{
-  left: -16vw;
-}
-
-.chevron-right-box{
-  right: -16vw;
-}
-
-.chevron-left-box:hover{
-  transform: translateX(-10%);
-  transition: .2s;
-}
-
-.chevron-right-box:hover{
-  transform: translateX(10%);
-  transition: .2s;
-}
-
-.bi-chevron-left, .bi-chevron-right{
-  color: white;
-  font-size: 40px;
-}
-
-.card-carousel .my-card {
-  pointer-events: none;
-  transition: 0.3s;
-
-  -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
-}
-
-.card-carousel td {
-  border: 0;
-}
-
 td.active {
-  pointer-events: auto;
   cursor: pointer;
 
   z-index: 3;
@@ -107,7 +56,6 @@ td.active {
 
 td.prev,
 td.next {
-  pointer-events: auto;
   cursor: pointer;
 
   box-sizing: border-box;
@@ -119,6 +67,10 @@ td.next {
   transform: scale(0.8);
   opacity: 0.6;
   transition: 0.3s;
+}
+
+.my-card{
+  pointer-events: all;
 }
 
 /* ---- Mobile devices ---- */
@@ -176,7 +128,69 @@ td.next {
   }
 }
 
-/* ----------- Video face detection ----------- */
+/* ---- Carousel icons (left & right arrows) ---- */
+.chevron-left-box, .chevron-right-box{
+  position: absolute;
+  top: 30px;
+
+  width: 60%;
+  height: 85%;
+
+  padding-top: 45%;
+  text-align: center;
+
+  transition: .2s;
+}
+
+@media (min-width: 992px){
+  .chevron-left-box{
+    left: -16vw;
+  }
+  
+  .chevron-right-box{
+    right: -16vw;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .chevron-left-box{
+    left: -20vw;
+  }
+  
+  .chevron-right-box{
+    right: -20vw;
+  }
+}
+
+.chevron-left-box:hover{
+  transform: translateX(-10%);
+  transition: .2s;
+}
+
+.chevron-right-box:hover{
+  transform: translateX(10%);
+  transition: .2s;
+}
+
+.bi-chevron-left, .bi-chevron-right{
+  color: white;
+  font-size: 40px;
+}
+
+.card-carousel .my-card {
+  transition: 0.3s;
+
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
+}
+
+.card-carousel td {
+  border: 0;
+}
+
+
+/* ---------------------- Video face detection ---------------------- */
 
 video {
   -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);

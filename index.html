@@ -26,7 +26,6 @@
   </head>
   <body>
     <!-- Navbar -->
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <a class="navbar-brand text-white" href="#">Linguaggio del corpo</a>
       <button
@@ -59,15 +58,53 @@
           </li>
           <div class="border-right"></div>
           <li class="nav-item">
-            <a class="nav-link text-white" href="/face-detection/face-detection.html">Riconoscimento facciale </a>
+            <a
+              class="nav-link text-white"
+              href="/face-detection/face-detection.html"
+              >Riconoscimento facciale
+            </a>
           </li>
         </ul>
       </div>
     </nav>
 
-    <!-- Cards carousel -->
-    <div class="card-carousel" id="index-carousel">
-      
+    <!-- Cards list -->
+    <div class="container text-center">
+      <div class="row mx-auto my-auto">
+        <div id="myCarousel" class="carousel slide w-100" data-ride="carousel">
+          <div
+            id="cards-carousel"
+            class="carousel-inner w-100"
+            role="listbox"
+          ></div>
+          <a
+            class="carousel-control-prev w-auto"
+            href="#myCarousel"
+            role="button"
+            data-slide="prev"
+          >
+            <div class="carousel-arrow bg-primary btn">
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+            </div>
+          </a>
+          <a
+            class="carousel-control-next w-auto"
+            href="#myCarousel"
+            role="button"
+            data-slide="next"
+          >
+            <div class="carousel-arrow bg-primary btn">
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
 
     <!-- Footer -->

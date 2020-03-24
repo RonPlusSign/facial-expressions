@@ -37,17 +37,28 @@ div.border-right {
 
 /* ----------- Carousel ----------- */
 .card-carousel {
-  overflow: visible;
+  display: flex;
+  justify-content: center;
+  min-height: fit-content;
+  overflow: hidden;
 
-  box-sizing: border-box;
+  margin: 10px auto;
+  max-height: 70%;
   padding: 10px;
-  margin: 10px;
 
-  border: 2px solid red;
+  border: 1px solid lightgrey;
+
 }
 
 .card-carousel .my-card {
-  cursor: pointer;
+  /* width: 20vw; */
+  height: fit-content;
+  position: relative;
+  top: 0;
+  -webkit-transform: scale(0.6);
+  transform: scale(0.6);
+  opacity: 0;
+  cursor: pointer;  
   pointer-events: none;
   transition: 0.3s;
 
@@ -56,84 +67,77 @@ div.border-right {
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
 }
 
-.card-carousel td{
-  border: 0;
+.my-card:not(.active):not(.next):not(.prev) {
+  height: 0;
 }
 
-td.active {
+.my-card.active {
   z-index: 3;
   -webkit-transform: scale(1);
   transform: scale(1);
   opacity: 1;
   pointer-events: auto;
   transition: 0.3s;
+
 }
 
-td.prev,
-td.next {
-  box-sizing: border-box;
+.my-card.prev,
+.my-card.next {
+  min-width: 15%;
   z-index: 2;
+  margin-top: 2vh;
   -webkit-transform: scale(0.8);
   transform: scale(0.8);
   opacity: 0.6;
   pointer-events: auto;
   transition: 0.3s;
-  margin-bottom: 5%;
-  margin-top: 10px;
 }
 
 /* ---- Mobile devices ---- */
 @media only screen and (max-width: 991px) {
   .card-carousel {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 95%;
   }
 
-  td.active {
-    position: absolute;
-    top: 0;
-    max-width: 70%;
+  .my-card.active {
+    min-width: 70%;
   }
 
-  td.prev,
-  td.next {
-    box-sizing: border-box;
-    max-width: 43%;
+  .my-card.prev,
+  .my-card.next {
+    min-width: 50%;
   }
 
-  td.prev {
-    transform: translateX(-20%);
-  }
-
-  td.next {
+  .my-card.prev {
     transform: translateX(20%);
+  }
+
+  .my-card.next {
+    transform: translateX(-20%);
   }
 }
 
 /* ---- Tablets, desktops ---- */
 @media (min-width: 992px) {
   .card-carousel {
-    position: relative;
+    max-width: 80%;
   }
 
-  td.active {
-    position: absolute;
-    width: 40%;
-    top: 0;
+  .my-card.active {
+    min-width: 30%;
   }
 
-  td.prev,
-  td.next {
-    width: 34%;
+  .my-card.prev,
+  .my-card.next {
+    min-width: 25%;
   }
 
-  td.prev {
-    transform: translateX(-30%);
+  .my-card.prev {
+    transform: translateX(10%);
   }
 
-  td.next {
-    transform: translateX(30%);
+  .my-card.next {
+    transform: translateX(-10%);
   }
 }
 
@@ -149,6 +153,7 @@ video {
 
 /* ---- Tablets, desktops ---- */
 @media (min-width: 991px) {
+
   video,
   canvas {
     position: absolute;
@@ -170,6 +175,7 @@ video {
 
 /* ---- Mobile devices ---- */
 @media only screen and (max-width: 991px) {
+
   video,
   canvas {
     position: absolute;

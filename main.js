@@ -1,31 +1,25 @@
 import modules from "./modules/all.mjs";
 
-// ----------------- CARDS -----------------
+// ----------------- Add cards to carousel -----------------
 
-/*
-Card structure:
-// Add class "active" to carousel-item if necessary
-
-<div class="carousel-item">
-  <div class="col-lg-4 col-md-6">
-    <div class="card my-card">
+function populateBody() {
+  /* Card structure:
+  <div class="carousel-item">
+    <div class="col-lg-4 col-md-6">
+      <div class="card my-card">
       <img class="card-img-top" src="https://dummyimage.com/400x400/000/fff" />
-      <div class="card-body">
+        <div class="card-body">
         <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        <p class="card-text">Card's content
         </p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
-  </div>
-</div>
-*/
+  </div> */
 
-function populateBody() {
   // Append cards to the element
   modules.forEach((element, index) => {
+    // Add class "active" to the first carousel-item
     if (index == 0) {
       $("#cards-carousel").append(`
       <div class="carousel-item active"><div class="col-lg-4 col-md-6">
@@ -141,3 +135,44 @@ $(".carousel .carousel-item").each(function() {
       .appendTo($(this));
   }
 });
+
+/* ---- Carousel swipe left & right ---- */
+document
+  .querySelector("#myCarousel")
+  .addEventListener("touchstart", handleTouchStart, false);
+document
+  .querySelector("#myCarousel")
+  .addEventListener("touchmove", handleTouchMove, false);
+
+var xDown = null;
+
+function getTouches(evt) {
+  return (
+    evt.touches || evt.originalEvent.touches // browser API
+  ); // jQuery
+}
+
+function handleTouchStart(evt) {
+  const firstTouch = getTouches(evt)[0];
+  xDown = firstTouch.clientX;
+}
+
+function handleTouchMove(evt) {
+  if (!xDown) {
+    return;
+  }
+
+  var xUp = evt.touches[0].clientX;
+  var xDiff = xDown - xUp;
+
+  if (xDiff > 10) {
+    /* left swipe */
+    $(".carousel-control-next").click();
+  } else {
+    /* right swipe */
+    $(".carousel-control-prev").click();
+  }
+
+  /* reset value */
+  xDown = null;
+}

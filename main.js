@@ -20,6 +20,7 @@ Card structure:
 */
 
 function populateBody() {
+
   // Append a hidden card before the element
   // $("#index-carousel").append("<div class='card my-card hidden' style='cursor: pointer; pointer-events: none; border: 0;'></div>");
 
@@ -45,8 +46,8 @@ populateBody();
 
 // ----------------- Carousel logic -----------------
 var num = cards.length;
-var even = num / 2;
-var odd = (num + 1) / 2;
+var even = num / 2
+var odd = (num + 1) / 2
 
 if (num % 2 == 0) {
   $("#index-carousel td.active").append(cards[even]);
@@ -72,27 +73,9 @@ if (num % 2 == 0) {
   $("#index-carousel td.next .my-card").addClass("next");
 }
 
-document
-  .querySelector("#index-carousel td.active")
-  .appendChild(
-    new DOMParser().parseFromString(
-      '<div class="chevron-left-box"><svg class="bi bi-chevron-left" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 010 .708L5.707 8l5.647 5.646a.5.5 0 01-.708.708l-6-6a.5.5 0 010-.708l6-6a.5.5 0 01.708 0z" clip-rule="evenodd"/></svg></div>',
-      "text/html"
-    ).body.firstChild
-  );
-
-document
-  .querySelector("#index-carousel td.active")
-  .appendChild(
-    new DOMParser().parseFromString(
-      '<div class="chevron-right-box"><svg class="bi bi-chevron-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 01.708 0l6 6a.5.5 0 010 .708l-6 6a.5.5 0 01-.708-.708L10.293 8 4.646 2.354a.5.5 0 010-.708z" clip-rule="evenodd"/></svg></div>',
-      "text/html"
-    ).body.firstChild
-  );
-
 // ---- Carousel events ----
 
-$(".my-card").click(function() {
+$(".my-card").click(function () {
   // Remove all classes
   $(this).removeClass("prev active next");
 
@@ -103,36 +86,32 @@ $(".my-card").click(function() {
     .removeClass("prev active next");
 
   // Add next element
-  if (
-    $(this) // If the element has no next, add it from the cards array
-      .parent()
-      .next()
-      .children()[0] == undefined
-  ) {
+  if ($(this) // If the element has no next, add it from the cards array
+    .parent()
+    .next()
+    .children()[0] == undefined) {
+
     cards.forEach(element => {
       if (element == getStringFromNode($(this)[0]))
-        $("#index-carousel td.next").innerHTML = element;
-    });
-  } else
-    $(this)
-      .parent()
-      .next()
-      .children()
-      .addClass("next");
+      $("#index-carousel td.next").innerHTML = element;
+    })
+  } else $(this)
+    .parent()
+    .next()
+    .children()
+    .addClass("next");
 
   // Add prev element
-  if (
-    $(this) // If the element has no next, add it from the cards array
-      .parent()
-      .prev()
-      .children()[0] == undefined
-  ) {
-  } else
-    $(this)
-      .parent()
-      .next()
-      .children()
-      .addClass("prev");
+  if ($(this) // If the element has no next, add it from the cards array
+    .parent()
+    .prev()
+    .children()[0] == undefined) {
+
+  } else $(this)
+    .parent()
+    .next()
+    .children()
+    .addClass("prev");
 
   // Add active class
   $(this).addClass("active");
@@ -141,7 +120,7 @@ $(".my-card").click(function() {
 var getStringFromNode = (function() {
   var DIV = document.createElement("div");
 
-  if ("outerHTML" in DIV)
+  if ('outerHTML' in DIV)
     return function(node) {
       return node.outerHTML;
     };
@@ -151,11 +130,12 @@ var getStringFromNode = (function() {
     div.appendChild(node.cloneNode(true));
     return div.innerHTML;
   };
+
 })();
 
-// Keyboard carousel navigation
+// Keyboard carousel navigation 
 
-$("html body").keydown(function(e) {
+$("html body").keydown(function (e) {
   if (e.keyCode == 37) {
     // left
     $(".active")

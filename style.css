@@ -42,46 +42,12 @@ div.border-right {
   box-sizing: border-box;
   padding: 10px;
   margin: 10px;
-}
 
-.chevron-left-box, .chevron-right-box{
-  position: absolute;
-  top: 30px;
-
-  width: 60%;
-  height: 85%;
-
-  padding-top: 45%;
-  text-align: center;
-
-  transition: .2s;
-}
-
-
-.chevron-left-box{
-  left: -16vw;
-}
-
-.chevron-right-box{
-  right: -16vw;
-}
-
-.chevron-left-box:hover{
-  transform: translateX(-10%);
-  transition: .2s;
-}
-
-.chevron-right-box:hover{
-  transform: translateX(10%);
-  transition: .2s;
-}
-
-.bi-chevron-left, .bi-chevron-right{
-  color: white;
-  font-size: 40px;
+  border: 2px solid red;
 }
 
 .card-carousel .my-card {
+  cursor: pointer;
   pointer-events: none;
   transition: 0.3s;
 
@@ -90,35 +56,30 @@ div.border-right {
   box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
 }
 
-.card-carousel td {
+.card-carousel td{
   border: 0;
 }
 
 td.active {
-  pointer-events: auto;
-  cursor: pointer;
-
   z-index: 3;
   -webkit-transform: scale(1);
   transform: scale(1);
   opacity: 1;
+  pointer-events: auto;
   transition: 0.3s;
 }
 
 td.prev,
 td.next {
-  pointer-events: auto;
-  cursor: pointer;
-
   box-sizing: border-box;
-  margin-bottom: 5%;
-  margin-top: 10px;
-
   z-index: 2;
   -webkit-transform: scale(0.8);
   transform: scale(0.8);
   opacity: 0.6;
+  pointer-events: auto;
   transition: 0.3s;
+  margin-bottom: 5%;
+  margin-top: 10px;
 }
 
 /* ---- Mobile devices ---- */

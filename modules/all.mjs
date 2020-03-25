@@ -1,7 +1,9 @@
-import { Human } from "./specific/human.mjs";
-import { Dog } from "./specific/dog.mjs";
-import { Cat } from "./specific/cat.mjs";
-import { Chicken } from "./specific/chicken.mjs";
+import { Felicita } from "./emozioni/felicita.mjs";
+import { Rabbia } from "./emozioni/rabbia.mjs";
+import { Tristezza } from "./emozioni/tristezza.mjs";
+import { Stupore } from "./emozioni/stupore.mjs";
+import { Disgusto } from "./emozioni/disgusto.mjs";
+import { Paura } from "./emozioni/Paura.mjs";
 
 
-export default [Human, Dog, Cat, Chicken];
+export default [Felicita, Rabbia, Tristezza, Stupore, Disgusto, Paura];

@@ -1,4 +1,4 @@
-import modules from "./modules/all.mjs";
+import cardsContent from "./modules/all.mjs";
 
 // ----------------- Add cards to carousel -----------------
 
@@ -18,16 +18,16 @@ function populateBody() {
   </div> */
 
   // Append cards to the element
-  modules.forEach((element, index) => {
+  cardsContent.forEach((element, index) => {
     // Add class "active" to the first carousel-item
     if (index == 0) {
       $("#cards-carousel").append(`
       <div class="carousel-item active"><div class="col-lg-4 col-md-6">
         <div class="card my-card">
-          <img class="card-img-top" src=" ${element.angry().imageUrl}" />
+          <img class="card-img-top" src=" ${element.card().imageUrl}" />
           <div class="card-body">
-            <h5 class="card-title">${element.angry().title}</h5>
-            <p class="card-text">${element.angry().description}</p>
+            <h5 class="card-title">${element.card().title}</h5>
+            <p class="card-text">${element.card().description}</p>
             <br>
             <a href="#" class="btn btn-primary">Esplora</a>
           </div>
@@ -37,10 +37,10 @@ function populateBody() {
       $("#cards-carousel").append(`
       <div class="carousel-item"><div class="col-lg-4 col-md-6">
         <div class="card my-card">
-          <img class="card-img-top" src=" ${element.angry().imageUrl}" />
+          <img class="card-img-top" src=" ${element.card().imageUrl}" />
           <div class="card-body">
-            <h5 class="card-title">${element.angry().title}</h5>
-            <p class="card-text">${element.angry().description}</p>
+            <h5 class="card-title">${element.card().title}</h5>
+            <p class="card-text">${element.card().description}</p>
             <br>
             <a href="#" class="btn btn-primary">Esplora</a>
           </div>
@@ -94,7 +94,7 @@ var xDown = null;
 function getTouches(evt) {
   return (
     evt.touches || evt.originalEvent.touches // browser API
-  ); // jQuery
+  );
 }
 
 function handleTouchStart(evt) {
@@ -108,9 +108,9 @@ function handleTouchMove(evt) {
   }
 
   var xUp = evt.touches[0].clientX;
-  var xDiff = xDown - xUp;
+  var xDiff = xDown - xUp; // represents how many pixels have been swiped
 
-  console.log(xDiff);
+  // console.log(xDiff);
 
   if (xDiff > 10) {
     /* right swipe */
@@ -135,4 +135,3 @@ $("html body").keydown(function(e) {
     $(".carousel-control-next").click();
   }
 });
-

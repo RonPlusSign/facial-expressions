@@ -1,7 +1,8 @@
 class Navbar extends HTMLElement {
   constructor() {
-    super(); /* ... */
+    super();
   }
+
   connectedCallback() {
     this.innerHTML = `
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -20,7 +21,11 @@ class Navbar extends HTMLElement {
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link text-white" href="/index.html">Emozioni</a>
+            <a class="nav-link text-white" href="/index.html">Home</a>
+          </li>
+          <div class="border-right"></div>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Emozioni</a>
           </li>
           <div class="border-right"></div>
           <li class="nav-item">
@@ -35,19 +40,8 @@ class Navbar extends HTMLElement {
     </nav>`;
   }
 
-  disconnectedCallback() {
-    /* ... */
-  }
   static get observedAttributes() {
     return ["active-page"];
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    /* ... */
-  }
-
-  adoptedCallback() {
-    /* ... */
   }
 
   get activePage() {
@@ -71,7 +65,7 @@ customElements.define("custom-navbar", Navbar);
 
 setTimeout(function() {
   let el = document.querySelector("custom-navbar");
-//   console.log(el.activePage)
+  //   console.log(el.activePage)
   if (el) {
     document
       .querySelector(`.navbar .nav-item .nav-link[href="${el.activePage}"]`)

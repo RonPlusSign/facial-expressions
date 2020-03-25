@@ -12,7 +12,7 @@ function populateBody() {
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Card's content</p>
         <br>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="#" class="btn btn-primary">Explore</a>
       </div>
     </div>
   </div> */
@@ -29,7 +29,7 @@ function populateBody() {
             <h5 class="card-title">${element.card().title}</h5>
             <p class="card-text">${element.card().description}</p>
             <br>
-            <a href="#" class="btn btn-primary">Esplora</a>
+            <a href="${element.card().buttonLink}" class="btn btn-primary">Esplora</a>
           </div>
         </div>
       </div>`);
@@ -42,7 +42,7 @@ function populateBody() {
             <h5 class="card-title">${element.card().title}</h5>
             <p class="card-text">${element.card().description}</p>
             <br>
-            <a href="#" class="btn btn-primary">Esplora</a>
+            <a href="${element.card().buttonLink}" class="btn btn-primary">Esplora</a>
           </div>
         </div>
       </div>`);

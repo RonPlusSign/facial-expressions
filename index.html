@@ -28,47 +28,7 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand text-white" href="#">Linguaggio del corpo</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link text-white active" href="index.html">Home</a>
-          </li>
-          <div class="border-right"></div>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="emozioni.html">Emozioni</a>
-          </li>
-          <div class="border-right"></div>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="umani.html">Umani</a>
-          </li>
-          <div class="border-right"></div>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="animali.html">Animali</a>
-          </li>
-          <div class="border-right"></div>
-          <li class="nav-item">
-            <a
-              class="nav-link text-white"
-              href="/face-detection/face-detection.html"
-              >Riconoscimento facciale
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <custom-navbar active-page="/index.html"></custom-navbar>
 
     <!------------ BODY ------------>
     <h3 class="alert alert-primary text-center mt-4">Come ti senti oggi?</h3>
@@ -122,22 +82,31 @@
     </div>
 
     <!-- JavaScript -->
-    <script defer
+    <script
+      defer
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
       crossorigin="anonymous"
     ></script>
 
-    <script defer
+    <script
+      defer
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
       crossorigin="anonymous"
     ></script>
 
-    <script defer
+    <script
+      defer
       src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
+    ></script>
+
+    <script
+      defer
+      type="module"
+      src="components/navbar.mjs"
     ></script>
 
     <script defer type="module" src="main.js"></script>

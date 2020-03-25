@@ -1,6 +1,8 @@
 body {
   width: 100%;
   height: 100%;
+
+  margin-bottom: 60px;
 }
 
 /* ---------------------- Footer ---------------------- */
@@ -16,7 +18,7 @@ body {
 
 /* ---------------------- Navbar ---------------------- */
 
-li[class="nav-item active"] {
+li.nav-item .active {
   backdrop-filter: brightness(115%);
   border-radius: 5px;
 }
@@ -38,7 +40,7 @@ div.border-right {
   cursor: pointer;
 
   margin-bottom: 30px;
-  margin-top: 20px;
+  margin-top: 10px;
 
   -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);

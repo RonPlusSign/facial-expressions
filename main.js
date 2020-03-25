@@ -51,63 +51,6 @@ function populateBody() {
 
 populateBody();
 
-// ----------------- Carousel logic -----------------
-var num = $(".my-card").length;
-var even = num / 2;
-var odd = (num + 1) / 2;
-
-if (num % 2 == 0) {
-  $(".my-card:nth-child(" + even + ")").addClass("active");
-  $(".my-card:nth-child(" + even + ")")
-    .prev()
-    .addClass("prev");
-  $(".my-card:nth-child(" + even + ")")
-    .next()
-    .addClass("next");
-} else {
-  $(".my-card:nth-child(" + odd + ")").addClass("active");
-  $(".my-card:nth-child(" + odd + ")")
-    .prev()
-    .addClass("prev");
-  $(".my-card:nth-child(" + odd + ")")
-    .next()
-    .addClass("next");
-}
-
-// ---- Carousel events ----
-
-$(".my-card").click(function() {
-  $(this).removeClass("prev next");
-
-  $(this)
-    .siblings()
-    .removeClass("prev active next");
-
-  $(this).addClass("active");
-  $(this)
-    .prev()
-    .addClass("prev");
-  $(this)
-    .next()
-    .addClass("next");
-});
-
-// Keyboard carousel navigation
-
-$("html body").keydown(function(e) {
-  if (e.keyCode == 37) {
-    // left
-    $(".active")
-      .prev()
-      .trigger("click");
-  } else if (e.keyCode == 39) {
-    // right
-    $(".active")
-      .next()
-      .trigger("click");
-  }
-});
-
 /* -------------------- Carousel logic -------------------- */
 
 $("#myCarousel").carousel({
@@ -167,14 +110,29 @@ function handleTouchMove(evt) {
   var xUp = evt.touches[0].clientX;
   var xDiff = xDown - xUp;
 
+  console.log(xDiff);
+
   if (xDiff > 10) {
-    /* left swipe */
-    $(".carousel-control-next").click();
-  } else {
     /* right swipe */
+    $(".carousel-control-next").click();
+  } else if (xDiff < -10) {
+    /* left swipe */
     $(".carousel-control-prev").click();
   }
 
   /* reset value */
   xDown = null;
 }
+
+// ----- Keyboard carousel navigation -----
+
+$("html body").keydown(function(e) {
+  if (e.keyCode == 37) {
+    // left
+    $(".carousel-control-prev").click();
+  } else if (e.keyCode == 39) {
+    // right
+    $(".carousel-control-next").click();
+  }
+});
+

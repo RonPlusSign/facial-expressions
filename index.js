@@ -17,9 +17,10 @@ function populateBody() {
     </div>
   </div> */
 
-  // Append cards to the element
   emotions.forEach((element, index) => {
-    var cardData = element.data()
+    // ----- Append cards to the element -----
+
+    var cardData = element.data();
     // Add class "active" to the first carousel-item
     if (index == 0) {
       $("#cards-carousel").append(`

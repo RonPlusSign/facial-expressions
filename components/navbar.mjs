@@ -1,3 +1,5 @@
+import emotions from "/modules/all.mjs";
+
 class Navbar extends HTMLElement {
   constructor() {
     super();
@@ -24,13 +26,16 @@ class Navbar extends HTMLElement {
             <a class="nav-link text-white" href="/index.html">Home</a>
           </li>
           <div class="border-right"></div>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#">Emozioni</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link text-white dropdown-toggle" href="#emotions" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Emozioni
+            </a>
+            <div class="dropdown-menu" id="navbar-emotions-dropdown" aria-labelledby="navbarDropdownMenuLink">
+            </div>
           </li>
           <div class="border-right"></div>
           <li class="nav-item">
-            <a
-              class="nav-link text-white"
+            <a class="nav-link text-white"
               href="/face-detection/face-detection.html"
               >Riconoscimento facciale
             </a>
@@ -72,3 +77,11 @@ setTimeout(function() {
       .classList.add("active");
   }
 }, 1000);
+
+// ----- Append emotion to navbar emotion section -----
+emotions.forEach(element => {
+  var cardData = element.data();
+  $("#navbar-emotions-dropdown").append(
+    `          <a class="dropdown-item" href="${cardData.view}">${cardData.name}</a>`
+  );
+});

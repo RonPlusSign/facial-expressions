@@ -19,7 +19,7 @@ body {
 }
 
 /* ---------------------- Navbar ---------------------- */
-li.nav-item a.nav-link{
+li.nav-item a.nav-link {
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -35,6 +35,20 @@ div.border-right {
 
 .navbar-toggler {
   border: none;
+}
+
+#navbar-emotions-dropdown {
+  background-color: #007bff;
+}
+
+#navbar-emotions-dropdown *:hover {
+  background-color: #dbeaff;
+  color: black;
+  transition: 0.2s;
+}
+
+#navbar-emotions-dropdown * {
+  color: white;
 }
 
 /*---------------------------- Cards ---------------------- */

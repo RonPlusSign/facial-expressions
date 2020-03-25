@@ -10,8 +10,8 @@ function populateBody() {
       <img class="card-img-top" src="https://dummyimage.com/400x400/000/fff" />
         <div class="card-body">
         <h5 class="card-title">Card title</h5>
-        <p class="card-text">Card's content
-        </p>
+        <p class="card-text">Card's content</p>
+        <br>
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
@@ -28,6 +28,7 @@ function populateBody() {
           <div class="card-body">
             <h5 class="card-title">${element.angry().title}</h5>
             <p class="card-text">${element.angry().description}</p>
+            <br>
             <a href="#" class="btn btn-primary">Esplora</a>
           </div>
         </div>
@@ -40,6 +41,7 @@ function populateBody() {
           <div class="card-body">
             <h5 class="card-title">${element.angry().title}</h5>
             <p class="card-text">${element.angry().description}</p>
+            <br>
             <a href="#" class="btn btn-primary">Esplora</a>
           </div>
         </div>

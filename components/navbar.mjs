@@ -60,7 +60,9 @@ class Navbar extends HTMLElement {
     } else {
       this.setAttribute("active-page", val);
       document
-        .querySelector(`.navbar .nav-item .nav-link[href="/facial-expressions${hrefParam}"]`)
+        .querySelector(
+          `.navbar .nav-item .nav-link[href="/facial-expressions${hrefParam}"]`
+        )
         .classList.add("active");
     }
   }

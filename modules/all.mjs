@@ -5,5 +5,4 @@ import { Stupore } from "./emozioni/stupore.mjs";
 import { Disgusto } from "./emozioni/disgusto.mjs";
 import { Paura } from "./emozioni/paura.mjs";
 
-
 export default [Felicità, Rabbia, Tristezza, Stupore, Disgusto, Paura];

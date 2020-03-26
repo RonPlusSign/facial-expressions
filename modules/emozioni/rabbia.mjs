@@ -4,7 +4,8 @@ export class Rabbia {
       name: "Rabbia",
       view: "/views/rabbia.html",
       title: "Arrabbiato",
-      briefDescription: "La rabbia è l'emozione che ci fa provare sdegno o odio verso gli altri.",
+      briefDescription:
+        "La rabbia è l'emozione che ci fa provare sdegno o odio verso gli altri.",
       description: `
       <p>La rabbia è l'emozione che ci fa provare <b>sdegno o odio</b> verso gli altri.</p>
       

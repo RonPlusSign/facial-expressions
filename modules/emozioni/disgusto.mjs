@@ -4,7 +4,8 @@ export class Disgusto {
       name: "Disgusto",
       view: "/views/disgusto.html",
       title: "Disgustato",
-      briefDescription: "Il disgusto è un'emozione che indica un sentimento di repulsione.",
+      briefDescription:
+        "Il disgusto è un'emozione che indica un sentimento di repulsione.",
       description: `
       <p>Il disgusto è un'emozione che indica un sentimento di <b>repulsione</b>.</p>
       

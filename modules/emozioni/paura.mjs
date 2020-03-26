@@ -4,7 +4,8 @@ export class Paura {
       name: "Paura",
       view: "/views/paura.html",
       title: "Impaurito",
-      briefDescription: "Quando si prova paura si teme di subire un danno, sia fisico che psicologico.",
+      briefDescription:
+        "Quando si prova paura si teme di subire un danno, sia fisico che psicologico.",
       description: `
       <p>
         Quando si prova paura si teme di <b>subire un danno</b>, sia fisico che psicologico.

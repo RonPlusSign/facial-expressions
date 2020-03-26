@@ -26,7 +26,7 @@ function renderEmotionBody(emotion) {
           <img src="${emotionData.imageUrl}" style="border: 3px solid ${emotionData.color};" />
         </td>
         <td class="col-sm-8 col-md-6 col-lg-8">
-          <h3 class="text-center" style="background-color: ${emotionData.color};">${emotionData.title}</h3>
+          <h3 class="text-center" style="background-color: ${emotionData.color};">${emotionData.name}</h3>
           <p class="text-justify description">
           ${emotionData.description}
           </p>

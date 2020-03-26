@@ -44,7 +44,6 @@ div.border-right {
 #navbar-emotions-dropdown *:hover {
   background-color: #dbeaff;
   color: black;
-  transition: 0.2s;
 }
 
 #navbar-emotions-dropdown * {

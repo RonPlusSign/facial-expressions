@@ -68,6 +68,15 @@ class Navbar extends HTMLElement {
 
 customElements.define("custom-navbar", Navbar);
 
+// ----- Append emotion to navbar emotion section -----
+emotions.forEach(element => {
+  var cardData = element.data();
+  $("#navbar-emotions-dropdown").append(
+    `          <a class="dropdown-item" href="${cardData.view}">${cardData.name}</a>`
+  );
+});
+
+// ----- Set "active" class into the right navbar element
 setTimeout(function() {
   let el = document.querySelector("custom-navbar");
   //   console.log(el.activePage)
@@ -77,11 +86,3 @@ setTimeout(function() {
       .classList.add("active");
   }
 }, 1000);
-
-// ----- Append emotion to navbar emotion section -----
-emotions.forEach(element => {
-  var cardData = element.data();
-  $("#navbar-emotions-dropdown").append(
-    `          <a class="dropdown-item" href="${cardData.view}">${cardData.name}</a>`
-  );
-});

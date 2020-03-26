@@ -82,6 +82,7 @@ div.border-right {
 
 .card .btn.btn-primary {
   position: absolute;
+  width: fit-content;
   right: 25px;
   bottom: 15px;
 }

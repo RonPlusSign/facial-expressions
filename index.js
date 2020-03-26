@@ -1,4 +1,4 @@
-import emotions from "/modules/all.mjs";
+import emotions from "/facial-expressions/modules/all.mjs";
 
 // ----------------- Add cards to carousel -----------------
 

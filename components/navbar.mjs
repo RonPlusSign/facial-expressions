@@ -1,4 +1,4 @@
-import emotions from "/modules/all.mjs";
+import emotions from "/facial-expressions/modules/all.mjs";
 
 class Navbar extends HTMLElement {
   constructor() {
@@ -8,7 +8,7 @@ class Navbar extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand text-white" href="/index.html">Linguaggio del corpo</a>
+      <a class="navbar-brand text-white" href="/facial-expressions/index.html">Linguaggio del corpo</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -23,7 +23,7 @@ class Navbar extends HTMLElement {
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link text-white" href="/index.html">Home</a>
+            <a class="nav-link text-white" href="/facial-expressions/index.html">Home</a>
           </li>
           <div class="border-right"></div>
           <li class="nav-item dropdown">
@@ -36,7 +36,7 @@ class Navbar extends HTMLElement {
           <div class="border-right"></div>
           <li class="nav-item">
             <a class="nav-link text-white"
-              href="/face-detection/face-detection.html"
+              href="/facial-expressions/face-detection/face-detection.html"
               >Riconoscimento facciale
             </a>
           </li>
@@ -60,7 +60,7 @@ class Navbar extends HTMLElement {
     } else {
       this.setAttribute("active-page", val);
       document
-        .querySelector(`.navbar .nav-item .nav-link[href="${hrefParam}"]`)
+        .querySelector(`.navbar .nav-item .nav-link[href="/facial-expressions${hrefParam}"]`)
         .classList.add("active");
     }
   }
@@ -72,7 +72,7 @@ customElements.define("custom-navbar", Navbar);
 emotions.forEach(element => {
   var cardData = element.data();
   $("#navbar-emotions-dropdown").append(
-    `          <a class="dropdown-item" href="${cardData.view}">${cardData.name}</a>`
+    `          <a class="dropdown-item" href="/facial-expressions${cardData.view}">${cardData.name}</a>`
   );
 });
 
@@ -82,7 +82,7 @@ setTimeout(function() {
   //   console.log(el.activePage)
   if (el) {
     document
-      .querySelector(`.navbar .nav-item .nav-link[href="${el.activePage}"]`)
+      .querySelector(`.navbar .nav-item .nav-link[href="/facial-expressions${el.activePage}"]`)
       .classList.add("active");
   }
 }, 1000);

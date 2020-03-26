@@ -82,7 +82,7 @@ setTimeout(function() {
   //   console.log(el.activePage)
   if (el) {
     document
-      .querySelector(`.navbar .nav-item .nav-link[href="/facial-expressions${el.activePage}"]`)
+      .querySelector(`.navbar .nav-item .nav-link[href="${el.activePage}"]`)
       .classList.add("active");
   }
 }, 1000);

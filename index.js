@@ -31,7 +31,7 @@ function populateBody() {
             <h5 class="card-title">${cardData.title}</h5>
             <p class="card-text">${cardData.briefDescription}</p>
             <br>
-            <a href="${cardData.buttonLink}" class="btn btn-primary">Esplora</a>
+            <a href="/facial-expressions${cardData.buttonLink}" class="btn btn-primary">Esplora</a>
           </div>
         </div>
       </div>`);
@@ -44,7 +44,7 @@ function populateBody() {
             <h5 class="card-title">${cardData.title}</h5>
             <p class="card-text">${cardData.briefDescription}</p>
             <br>
-            <a href="${cardData.buttonLink}" class="btn btn-primary">Esplora</a>
+            <a href="/facial-expressions${cardData.buttonLink}" class="btn btn-primary">Esplora</a>
           </div>
         </div>
       </div>`);

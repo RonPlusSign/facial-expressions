@@ -27,9 +27,9 @@ function renderEmotionBody(emotion) {
         </td>
         <td class="col-sm-8 col-md-6 col-lg-8">
           <h3 class="text-center" style="background-color: ${emotionData.color};">${emotionData.name}</h3>
-          <p class="text-justify description">
+          <div class="text-justify description">
           ${emotionData.description}
-          </p>
+          </div>
         </td>
       </tr>
     </table>

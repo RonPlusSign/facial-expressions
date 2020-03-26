@@ -71,6 +71,15 @@ div.border-right {
   transition: 0.2s;
 }
 
+.card-body{
+  position: relative;
+  height: 180px;
+}
+
+p.card-text{
+  margin-top: 15px;
+}
+
 .card:hover {
   -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.4);
@@ -82,9 +91,11 @@ div.border-right {
 
 .card .btn.btn-primary {
   position: absolute;
-  width: fit-content;
   right: 25px;
-  bottom: 15px;
+  top: 10px;
+  
+  width: 110px;
+  padding: 7px;
 }
 
 /* ---------------------- Carousel ---------------------- */

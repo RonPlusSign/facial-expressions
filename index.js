@@ -26,7 +26,7 @@ function populateBody() {
       $("#cards-carousel").append(`
       <div class="carousel-item active"><div class="col-lg-4 col-md-6">
         <div class="card my-card">
-          <img class="card-img-top" src=" ${cardData.imageUrl}" />
+          <img class="card-img-top" src="/facial-expressions${cardData.imageUrl}" />
           <div class="card-body">
             <h5 class="card-title">${cardData.title}</h5>
             <p class="card-text">${cardData.briefDescription}</p>
@@ -39,7 +39,7 @@ function populateBody() {
       $("#cards-carousel").append(`
       <div class="carousel-item"><div class="col-lg-4 col-md-6">
         <div class="card my-card">
-          <img class="card-img-top" src=" ${cardData.imageUrl}" />
+          <img class="card-img-top" src="/facial-expressions${cardData.imageUrl}" />
           <div class="card-body">
             <h5 class="card-title">${cardData.title}</h5>
             <p class="card-text">${cardData.briefDescription}</p>

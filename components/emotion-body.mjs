@@ -23,7 +23,7 @@ function renderEmotionBody(emotion) {
         <td
           class="col-sm-4 col-md-6 col-lg-4 text-center"
         >
-          <img src="${emotionData.imageUrl}" style="border: 3px solid ${emotionData.color};" />
+          <img src="/facial-expressions/${emotionData.imageUrl}" style="border: 3px solid ${emotionData.color};" />
         </td>
         <td class="col-sm-8 col-md-6 col-lg-8">
           <h3 class="text-center" style="background-color: ${emotionData.color};">${emotionData.name}</h3>

@@ -60,7 +60,7 @@ populateBody();
 /* -------------------- Carousel logic -------------------- */
 
 $("#myCarousel").carousel({
-  interval: 2000
+  interval: 4000
 });
 
 $(".carousel .carousel-item").each(function() {
